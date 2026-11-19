@@ -118,21 +118,17 @@ namespace PizzaLibrary
             }
         }
 
-        public void MenuItemsInPriceRange(double min, double max)
+        public List<IMenuItem>? MenuItemsInPriceRange(double min, double max)
         {
-            List<MenuType> menuTypes = MenuTypeList();
-            Console.WriteLine($"Here is every item that costs between {min} and {max}:");
-            foreach (var type in menuTypes)
+            List<IMenuItem> tempList = new List<IMenuItem>();
+            foreach (var item in _menuItemList)
             {
-                List<IMenuItem>? items = FindAllItems(type);
-                foreach (var item in items)
+                if (item.Price >= min && item.Price <= max)
                 {
-                    if (item.Price >= min && item.Price <= max)
-                    {
-                        Console.WriteLine(item);
-                    }
+                    tempList.Add(item);
                 }
             }
+            return tempList;
         }
 
         public void UpdateMenuItem(int no, string name, double price, string description, MenuType menuType)

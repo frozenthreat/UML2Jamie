@@ -1,9 +1,9 @@
 ﻿public class CompanyInfo
 {
-    public int Vat { get; set; }
-    public string Cvr { get; set; }
-    public string Name { get; set; }
-    public int ClubDiscount { get; set; }
+    public int? Vat { get; set; }
+    public string? Cvr { get; set; }
+    public string? Name { get; set; }
+    public int? ClubDiscount { get; set; }
     private static CompanyInfo? _instance;
     public static CompanyInfo Instance
     {

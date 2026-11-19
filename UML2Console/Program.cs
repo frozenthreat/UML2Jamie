@@ -42,7 +42,14 @@ info2.Name = "Companyy";
 Console.WriteLine(info);
 Console.WriteLine(info2);
 
-menuRepo.MenuItemsInPriceRange(85, 97);
+Console.WriteLine();
+Console.WriteLine($"Here is every item that costs between 85 and 97 kr:");
+List<IMenuItem> priceRangeList = menuRepo.MenuItemsInPriceRange(85, 97);
+foreach (var item in priceRangeList)
+{
+    Console.WriteLine(item);
+}
+Console.WriteLine();
 
 custRepo.UpdateCustomer(2, "ABABABAB", "BABABABA", "23272723");
 Console.WriteLine(custRepo.GetCustomerByMobile("23272723"));
