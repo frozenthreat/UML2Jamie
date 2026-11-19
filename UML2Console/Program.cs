@@ -43,3 +43,8 @@ Console.WriteLine(info);
 Console.WriteLine(info2);
 
 menuRepo.MenuItemsInPriceRange(85, 97);
+
+custRepo.UpdateCustomer(2, "ABABABAB", "BABABABA", "23272723");
+Console.WriteLine(custRepo.GetCustomerByMobile("23272723"));
+menuRepo.UpdateMenuItem(2, "AAAAAAAA", 99.99, "BBBBBBBBBB", MenuType.SANDWICHES);
+Console.WriteLine(menuRepo.GetMenuItemByNo(2));

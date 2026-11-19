@@ -84,5 +84,20 @@ namespace PizzaLibrary
             }
             return roskildeList;
         }
+
+        public void UpdateCustomer(int id, string name, string address, string mobile)
+        {
+            foreach (var customer in _customers.Values)
+            {
+                if (customer.Id == id)
+                {
+                    _customers.Remove(customer.Mobile);
+                    Customer updatedCustomer = new(name, mobile, address);
+                    updatedCustomer.Id = id;
+                    _customers.Add(mobile, updatedCustomer);
+                    return;
+                }
+            }
+        }
     }
 }

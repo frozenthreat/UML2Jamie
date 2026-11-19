@@ -10,10 +10,11 @@ namespace PizzaLibrary
         public double Price { get; set; }
         public string Description { get; set; }
         public MenuType TheMenuType { get; set; }
+        private static int _counter;
         public int No { get; private set; }
         public MenuItem(string name, double price, string description, MenuType menuType)
         {
-            ++No;
+            No = ++_counter;
             Name = name;
             Price = price;
             Description = description;
@@ -22,7 +23,7 @@ namespace PizzaLibrary
 
         public override string ToString()
         {
-            return $"Name: {Name}; Price: {Price}; Description: {Description}; Menu type: {TheMenuType}";
+            return $"No: {No} Name: {Name}; Price: {Price}; Description: {Description}; Menu type: {TheMenuType}";
         }
     }
 }

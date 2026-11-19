@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace PizzaLibrary
 {
@@ -130,6 +131,20 @@ namespace PizzaLibrary
                     {
                         Console.WriteLine(item);
                     }
+                }
+            }
+        }
+
+        public void UpdateMenuItem(int no, string name, double price, string description, MenuType menuType)
+        {
+            foreach (var item in _menuItemList)
+            {
+                if (item.No == no)
+                {
+                    item.Name = name;
+                    item.Price = price;
+                    item.Description = description;
+                    item.TheMenuType = menuType;
                 }
             }
         }
