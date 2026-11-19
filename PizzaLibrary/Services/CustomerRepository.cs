@@ -91,11 +91,11 @@ namespace PizzaLibrary
             {
                 if (customer.Id == id)
                 {
-                    _customers.Remove(customer.Mobile);
+                    RemoveCustomer(customer.Mobile);
                     Customer updatedCustomer = new(name, mobile, address);
                     Customer.DecrementCounter();
                     updatedCustomer.Id = id;
-                    _customers.Add(mobile, updatedCustomer);
+                    AddCustomer(updatedCustomer);
                     return;
                 }
             }
