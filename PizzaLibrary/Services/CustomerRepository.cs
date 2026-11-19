@@ -93,6 +93,7 @@ namespace PizzaLibrary
                 {
                     _customers.Remove(customer.Mobile);
                     Customer updatedCustomer = new(name, mobile, address);
+                    Customer.DecrementCounter();
                     updatedCustomer.Id = id;
                     _customers.Add(mobile, updatedCustomer);
                     return;

@@ -25,5 +25,10 @@ namespace PizzaLibrary
         {
             return $"ID: {Id}; Name: {Name}; Mobile: {Mobile}; Address: {Address}; Is club member: {ClubMember}";
         }
+
+        public static void DecrementCounter()
+        {
+            _counter--;
+        }
     }
 }
